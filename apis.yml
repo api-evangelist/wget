@@ -1,0 +1,40 @@
+aid: wget
+name: Wget
+description: >-
+  GNU Wget is a free command-line utility for non-interactive downloading of files from the web using HTTP, HTTPS, and FTP.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+      - Clients
+      - CLI
+      - HTTP Client
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/wget/refs/heads/main/apis.yml
+created: '2026-03-27'
+modified: '2026-03-27'
+specificationVersion: '0.19'
+apis:
+  - aid: wget:wget
+    name: Wget
+    description: >-
+      GNU Wget is a free command-line utility for non-interactive downloading of files from the web using HTTP, HTTPS, and FTP.
+    humanURL: https://www.gnu.org/software/wget/
+    tags:
+        - Clients
+        - CLI
+        - HTTP Client
+    properties:
+      - type: Documentation
+        url: https://www.gnu.org/software/wget/manual/
+      - type: Getting Started
+        url: https://www.gnu.org/software/wget/manual/wget.html
+common:
+  - type: Website
+    url: https://www.gnu.org/software/wget/
+  - type: Documentation
+    url: https://www.gnu.org/software/wget/manual/
+  - type: GitHub Organization
+    url: https://git.savannah.gnu.org/cgit/wget.git
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
