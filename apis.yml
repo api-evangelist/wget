@@ -5,9 +5,9 @@ description: >-
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-      - Clients
-      - CLI
-      - HTTP Client
+  - CLI
+  - Clients
+  - HTTP Client
 url: >-
   https://raw.githubusercontent.com/api-evangelist/wget/refs/heads/main/apis.yml
 created: '2026-03-27'
@@ -20,9 +20,9 @@ apis:
       GNU Wget is a free command-line utility for non-interactive downloading of files from the web using HTTP, HTTPS, and FTP.
     humanURL: https://www.gnu.org/software/wget/
     tags:
-        - Clients
-        - CLI
-        - HTTP Client
+      - CLI
+      - Clients
+      - HTTP Client
     properties:
       - type: Documentation
         url: https://www.gnu.org/software/wget/manual/
