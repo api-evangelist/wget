@@ -1,0 +1,65 @@
+{
+  "name": "Wget2 Plugin",
+  "description": "Structure of a Wget2 plugin definition using the libwget plugin API.",
+  "fields": [
+    { "name": "pluginName", "type": "string", "required": true, "description": "Plugin's registered name." },
+    { "name": "initializerFunction", "type": "string", "required": true, "description": "Entry point: wget_plugin_initializer()." },
+    {
+      "name": "callbacks",
+      "type": "object",
+      "required": false,
+      "description": "Registered plugin callbacks.",
+      "fields": [
+        {
+          "name": "finalizer",
+          "type": "object",
+          "required": false,
+          "fields": [
+            { "name": "function", "type": "string", "required": true },
+            { "name": "receivesExitStatus", "type": "boolean", "required": false }
+          ]
+        },
+        {
+          "name": "optionHandler",
+          "type": "object",
+          "required": false,
+          "fields": [
+            { "name": "function", "type": "string", "required": true },
+            { "name": "optionPattern", "type": "string", "required": false }
+          ]
+        },
+        {
+          "name": "urlFilter",
+          "type": "object",
+          "required": false,
+          "fields": [
+            { "name": "function", "type": "string", "required": true },
+            { "name": "actions", "type": "array", "items": "string", "required": false }
+          ]
+        },
+        {
+          "name": "postProcessor",
+          "type": "object",
+          "required": false,
+          "fields": [
+            { "name": "function", "type": "string", "required": true },
+            { "name": "fileAccess", "type": "array", "items": "string", "required": false }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "downloadedFile",
+      "type": "object",
+      "required": false,
+      "description": "Represents a downloaded file in a post-processor callback.",
+      "fields": [
+        { "name": "sourceUrl", "type": "string", "format": "uri", "required": false },
+        { "name": "localFilename", "type": "string", "required": false },
+        { "name": "size", "type": "integer", "format": "int64", "required": false },
+        { "name": "recurse", "type": "boolean", "required": false },
+        { "name": "recurseUrls", "type": "array", "items": "string", "required": false }
+      ]
+    }
+  ]
+}

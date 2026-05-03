@@ -1,0 +1,194 @@
+vocabulary:
+  name: Wget Vocabulary
+  description: >-
+    Domain vocabulary for GNU Wget and Wget2, covering file download operations,
+    protocol support, recursive retrieval, plugin API concepts, and configuration
+    options for the GNU command-line file downloading utility.
+  version: '1.0'
+  created: '2026-05-03'
+  modified: '2026-05-03'
+  tags:
+    - CLI
+    - File Download
+    - HTTP Client
+    - GNU
+    - Open Source
+
+  terms:
+
+    - term: Wget
+      definition: >-
+        GNU Wget is a free, non-interactive command-line utility for downloading
+        files from the web using HTTP, HTTPS, FTP, and FTPS protocols.
+      tags:
+        - Core
+
+    - term: Wget2
+      definition: >-
+        The next-generation successor to GNU Wget, rewritten from scratch around
+        the libwget library with support for HTTP/2, multi-threading, and a plugin API.
+      tags:
+        - Core
+
+    - term: Libwget
+      definition: >-
+        A reusable C library providing core web client functionality used by Wget2,
+        licensed under LGPLv3+. Provides modules for HTTP, TLS, cookies, DNS,
+        encoding, IRI, and plugin support.
+      tags:
+        - Library
+
+    - term: Recursive Download
+      definition: >-
+        The ability to follow links in HTML pages and download referenced files,
+        recursively mirroring a website or directory structure locally.
+      tags:
+        - Feature
+
+    - term: Resume
+      definition: >-
+        The ability to continue an interrupted or aborted download using HTTP REST
+        and RANGE headers, avoiding re-downloading already-retrieved content.
+      tags:
+        - Feature
+
+    - term: Mirror
+      definition: >-
+        Creating a local copy of a remote website or FTP directory by recursively
+        downloading all files, using If-Modified-Since to only fetch updated files.
+      tags:
+        - Feature
+
+    - term: wgetrc
+      definition: >-
+        The startup configuration file for GNU Wget, typically located at ~/.wgetrc
+        or /etc/wgetrc, allowing default settings to be specified for command-line options.
+      tags:
+        - Configuration
+
+    - term: Plugin API
+      definition: >-
+        The Wget2 extension mechanism allowing third-party plugins to intercept URLs
+        before fetching, modify download behavior, and post-process downloaded files.
+      tags:
+        - Plugin API
+
+    - term: Plugin Initializer
+      definition: >-
+        The required entry point function wget_plugin_initializer() that every Wget2
+        plugin must implement; called when the plugin is loaded.
+      tags:
+        - Plugin API
+
+    - term: URL Filter
+      definition: >-
+        A plugin callback registered via wget_plugin_register_url_filter_callback()
+        that can accept, reject, or substitute URLs before Wget2 fetches them.
+      tags:
+        - Plugin API
+
+    - term: Post Processor
+      definition: >-
+        A plugin callback registered via wget_plugin_register_post_processor() that
+        processes files after they have been downloaded, with access to file contents
+        and metadata.
+      tags:
+        - Plugin API
+
+    - term: Metalink
+      definition: >-
+        An XML-based download description format supported by Wget2 that specifies
+        multiple download mirrors and hash verification for files.
+      tags:
+        - Feature
+
+    - term: Sitemap
+      definition: >-
+        An XML file that lists URLs for a website; Wget2 can scan Sitemap XML files
+        to discover URLs for recursive downloading.
+      tags:
+        - Feature
+
+    - term: RSS Feed
+      definition: >-
+        An XML syndication format; Wget2 can scan RSS 2.0 feeds to discover and
+        download linked resources.
+      tags:
+        - Feature
+
+    - term: Atom Feed
+      definition: >-
+        An XML syndication format; Wget2 can scan Atom 1.0 feeds to discover and
+        download linked resources.
+      tags:
+        - Feature
+
+    - term: HTTP Proxy
+      definition: >-
+        An intermediary server through which Wget routes HTTP requests, configurable
+        via the http_proxy environment variable or wgetrc.
+      tags:
+        - Networking
+
+    - term: Cookie
+      definition: >-
+        HTTP state management mechanism; Wget can load and save cookies to files
+        using Netscape cookie format to support authenticated sessions.
+      tags:
+        - Networking
+
+    - term: If-Modified-Since
+      definition: >-
+        An HTTP header used by Wget2 during mirroring to conditionally fetch files
+        only if they have changed since the local copy was last downloaded.
+      tags:
+        - Networking
+
+    - term: Persistent Connection
+      definition: >-
+        HTTP keep-alive connections that Wget maintains across multiple requests to
+        the same server, reducing connection overhead.
+      tags:
+        - Networking
+
+    - term: HTTP/2
+      definition: >-
+        The second major version of the HTTP protocol, supported by Wget2 for faster
+        downloads through multiplexed streams and header compression.
+      tags:
+        - Networking
+
+    - term: Intercept Action
+      definition: >-
+        The result object returned by a URL filter plugin callback that specifies
+        whether to accept, reject, substitute, or rename the download.
+      tags:
+        - Plugin API
+
+    - term: Recurse URL
+      definition: >-
+        A URL added to the download queue by a post-processor plugin via
+        wget_downloaded_file_add_recurse_url() for further recursive retrieval.
+      tags:
+        - Plugin API
+
+    - term: GNU Project
+      definition: >-
+        The free software initiative that produces GNU Wget as part of the GNU
+        operating system, maintained by the Free Software Foundation.
+      tags:
+        - Governance
+
+    - term: GPLv3
+      definition: >-
+        GNU General Public License version 3; the license under which GNU Wget and
+        Wget2 are distributed.
+      tags:
+        - License
+
+    - term: LGPLv3
+      definition: >-
+        GNU Lesser General Public License version 3; the license under which libwget
+        is distributed, allowing use in proprietary applications.
+      tags:
+        - License

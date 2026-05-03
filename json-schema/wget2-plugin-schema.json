@@ -1,0 +1,130 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/wget/main/json-schema/wget2-plugin-schema.json",
+  "title": "Wget2 Plugin",
+  "description": "Schema representing the Wget2 plugin API structure, including plugin registration, URL filter callbacks, and post-download processor callbacks via libwget.",
+  "type": "object",
+  "properties": {
+    "pluginName": {
+      "type": "string",
+      "description": "The registered name of the Wget2 plugin as returned by wget_plugin_get_name()."
+    },
+    "initializerFunction": {
+      "type": "string",
+      "description": "Name of the required entry point: wget_plugin_initializer(). Called when the plugin is loaded.",
+      "const": "wget_plugin_initializer"
+    },
+    "callbacks": {
+      "type": "object",
+      "description": "Callbacks registered by the plugin.",
+      "properties": {
+        "finalizer": {
+          "type": "object",
+          "description": "Callback invoked when wget exits.",
+          "properties": {
+            "function": {
+              "type": "string",
+              "description": "Function name registered via wget_plugin_register_finalizer()."
+            },
+            "receivesExitStatus": {
+              "type": "boolean",
+              "description": "The finalizer receives the exit status of wget."
+            }
+          }
+        },
+        "optionHandler": {
+          "type": "object",
+          "description": "Callback for handling plugin-specific command-line options.",
+          "properties": {
+            "function": {
+              "type": "string",
+              "description": "Function name registered via wget_plugin_register_option_callback()."
+            },
+            "optionPattern": {
+              "type": "string",
+              "description": "CLI option pattern: --plugin-opt=<plugin-name>.<option>[=<value>]"
+            }
+          }
+        },
+        "urlFilter": {
+          "type": "object",
+          "description": "Callback for intercepting and filtering URLs before download.",
+          "properties": {
+            "function": {
+              "type": "string",
+              "description": "Function name registered via wget_plugin_register_url_filter_callback()."
+            },
+            "actions": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": ["reject", "accept", "set_alt_url", "set_local_filename"]
+              },
+              "description": "Possible intercept actions the filter can take."
+            }
+          }
+        },
+        "postProcessor": {
+          "type": "object",
+          "description": "Callback for processing files after they have been downloaded.",
+          "properties": {
+            "function": {
+              "type": "string",
+              "description": "Function name registered via wget_plugin_register_post_processor()."
+            },
+            "fileAccess": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "get_source_url",
+                  "get_local_filename",
+                  "get_size",
+                  "get_contents",
+                  "open_stream",
+                  "get_recurse",
+                  "add_recurse_url"
+                ]
+              },
+              "description": "Available file access methods in the post-processor callback."
+            }
+          }
+        }
+      }
+    },
+    "downloadedFile": {
+      "type": "object",
+      "description": "Structure representing a file that has been downloaded by Wget2.",
+      "properties": {
+        "sourceUrl": {
+          "type": "string",
+          "format": "uri",
+          "description": "The origin URL of the downloaded file."
+        },
+        "localFilename": {
+          "type": "string",
+          "description": "The local file system path where the file was saved."
+        },
+        "size": {
+          "type": "integer",
+          "format": "int64",
+          "minimum": 0,
+          "description": "Size of the downloaded file in bytes."
+        },
+        "recurse": {
+          "type": "boolean",
+          "description": "Whether URL scanning (recursive link extraction) should be performed on this file."
+        },
+        "recurseUrls": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uri"
+          },
+          "description": "URLs discovered during post-processing and queued for recursive download."
+        }
+      }
+    }
+  },
+  "required": ["pluginName", "initializerFunction"]
+}

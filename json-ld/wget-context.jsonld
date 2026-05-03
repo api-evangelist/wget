@@ -1,0 +1,63 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "wget": "https://www.gnu.org/software/wget/vocab#",
+    "libwget": "https://gnuwget.gitlab.io/wget2/vocab#",
+
+    "Wget": "wget:Wget",
+    "Wget2": "wget:Wget2",
+    "Libwget": "wget:Libwget",
+
+    "downloadURL": "wget:downloadURL",
+    "protocol": "wget:protocol",
+    "recursiveDownload": "wget:recursiveDownload",
+    "resumeDownload": "wget:resumeDownload",
+    "mirrorSite": "wget:mirrorSite",
+    "configFile": "wget:configFile",
+    "pluginAPI": "wget:pluginAPI",
+
+    "PluginInitializer": "libwget:PluginInitializer",
+    "URLFilter": "libwget:URLFilter",
+    "PostProcessor": "libwget:PostProcessor",
+    "InterceptAction": "libwget:InterceptAction",
+    "DownloadedFile": "libwget:DownloadedFile",
+
+    "name": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "url": "schema:url",
+    "license": "schema:license",
+    "codeRepository": "schema:codeRepository",
+    "softwareHelp": "schema:softwareHelp",
+    "operatingSystem": "schema:operatingSystem",
+    "programmingLanguage": "schema:programmingLanguage",
+    "softwareVersion": "schema:softwareVersion",
+    "downloadUrl": "schema:downloadUrl",
+    "author": "schema:author",
+    "maintainer": "schema:maintainer",
+    "isPartOf": "schema:isPartOf",
+    "hasPart": "schema:hasPart",
+
+    "SoftwareApplication": "schema:SoftwareApplication",
+    "SoftwareLibrary": "schema:SoftwareLibrary",
+    "SoftwareSourceCode": "schema:SoftwareSourceCode",
+
+    "HTTP": "wget:HTTP",
+    "HTTPS": "wget:HTTPS",
+    "FTP": "wget:FTP",
+    "FTPS": "wget:FTPS",
+
+    "wgetrc": "wget:wgetrc",
+    "metalink": "wget:metalink",
+    "sitemap": "wget:sitemap",
+    "rssFeed": "wget:rssFeed",
+    "atomFeed": "wget:atomFeed",
+    "httpProxy": "wget:httpProxy",
+    "cookie": "wget:cookie",
+    "persistentConnection": "wget:persistentConnection",
+    "http2Support": "wget:http2Support",
+
+    "GNUProject": "wget:GNUProject",
+    "FreeSoftwareFoundation": "wget:FreeSoftwareFoundation"
+  }
+}

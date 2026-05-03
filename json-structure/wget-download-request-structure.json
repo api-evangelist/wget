@@ -1,0 +1,60 @@
+{
+  "name": "Wget Download Request",
+  "description": "Structure of a GNU Wget download request configuration.",
+  "fields": [
+    { "name": "url", "type": "string", "format": "uri", "required": true, "description": "The URL to download." },
+    { "name": "outputDocument", "type": "string", "required": false, "description": "Output file path." },
+    { "name": "outputDirectory", "type": "string", "required": false, "description": "Output directory path." },
+    { "name": "recursive", "type": "boolean", "required": false, "default": false, "description": "Enable recursive download." },
+    { "name": "level", "type": "integer", "required": false, "default": 5, "description": "Recursion depth." },
+    { "name": "resume", "type": "boolean", "required": false, "default": false, "description": "Resume partial downloads." },
+    { "name": "mirror", "type": "boolean", "required": false, "default": false, "description": "Mirror site locally." },
+    { "name": "timestamping", "type": "boolean", "required": false, "default": false, "description": "Only download changed files." },
+    { "name": "convertLinks", "type": "boolean", "required": false, "default": false, "description": "Convert absolute to relative links." },
+    {
+      "name": "proxy",
+      "type": "object",
+      "required": false,
+      "description": "Proxy configuration.",
+      "fields": [
+        { "name": "httpProxy", "type": "string", "format": "uri", "required": false },
+        { "name": "httpsProxy", "type": "string", "format": "uri", "required": false },
+        { "name": "noProxy", "type": "string", "required": false }
+      ]
+    },
+    {
+      "name": "authentication",
+      "type": "object",
+      "required": false,
+      "description": "HTTP authentication.",
+      "fields": [
+        { "name": "username", "type": "string", "required": false },
+        { "name": "password", "type": "string", "required": false },
+        { "name": "authScheme", "type": "string", "enum": ["basic", "digest"], "required": false }
+      ]
+    },
+    {
+      "name": "cookies",
+      "type": "object",
+      "required": false,
+      "description": "Cookie settings.",
+      "fields": [
+        { "name": "loadCookies", "type": "string", "required": false },
+        { "name": "saveCookies", "type": "string", "required": false },
+        { "name": "keepSessionCookies", "type": "boolean", "required": false, "default": false }
+      ]
+    },
+    { "name": "retries", "type": "integer", "required": false, "default": 20, "description": "Retry count on failure." },
+    { "name": "waitSeconds", "type": "number", "required": false, "default": 0, "description": "Wait between requests." },
+    { "name": "timeout", "type": "integer", "required": false, "description": "Operation timeout in seconds." },
+    { "name": "userAgent", "type": "string", "required": false, "description": "Custom User-Agent string." },
+    { "name": "acceptList", "type": "array", "items": "string", "required": false, "description": "Accepted file types." },
+    { "name": "rejectList", "type": "array", "items": "string", "required": false, "description": "Rejected file types." },
+    { "name": "domains", "type": "array", "items": "string", "required": false, "description": "Allowed domains for recursion." },
+    { "name": "excludeDirs", "type": "array", "items": "string", "required": false, "description": "Excluded directories." },
+    { "name": "background", "type": "boolean", "required": false, "default": false, "description": "Run in background." },
+    { "name": "quiet", "type": "boolean", "required": false, "default": false, "description": "Suppress output." },
+    { "name": "verbose", "type": "boolean", "required": false, "default": false, "description": "Verbose output." },
+    { "name": "inputFile", "type": "string", "required": false, "description": "File containing URLs to download." }
+  ]
+}

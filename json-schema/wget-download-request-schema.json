@@ -1,0 +1,177 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/wget/main/json-schema/wget-download-request-schema.json",
+  "title": "Wget Download Request",
+  "description": "Schema representing a GNU Wget file download request configuration, covering URL, protocol options, authentication, output, and recursive download settings.",
+  "type": "object",
+  "properties": {
+    "url": {
+      "type": "string",
+      "format": "uri",
+      "description": "The URL of the resource to download. Supports http://, https://, ftp://, and ftps:// schemes."
+    },
+    "outputDocument": {
+      "type": "string",
+      "description": "Path to save the downloaded file. Use '-' to write to stdout."
+    },
+    "outputDirectory": {
+      "type": "string",
+      "description": "Directory in which to save downloaded files."
+    },
+    "recursive": {
+      "type": "boolean",
+      "default": false,
+      "description": "Enable recursive downloading of linked pages and files."
+    },
+    "level": {
+      "type": "integer",
+      "minimum": 0,
+      "default": 5,
+      "description": "Maximum depth for recursive downloading. 0 means infinite."
+    },
+    "resume": {
+      "type": "boolean",
+      "default": false,
+      "description": "Resume a partially downloaded file using HTTP REST and RANGE headers."
+    },
+    "mirror": {
+      "type": "boolean",
+      "default": false,
+      "description": "Enable site mirroring: turns on recursion, timestamping, and infinite recursion depth."
+    },
+    "timestamping": {
+      "type": "boolean",
+      "default": false,
+      "description": "Only download files newer than local copies using If-Modified-Since headers."
+    },
+    "noParentDirectories": {
+      "type": "boolean",
+      "default": false,
+      "description": "Do not ascend to parent directories when retrieving recursively."
+    },
+    "convertLinks": {
+      "type": "boolean",
+      "default": false,
+      "description": "Convert absolute links in downloaded HTML to relative links for local viewing."
+    },
+    "proxy": {
+      "type": "object",
+      "description": "HTTP/HTTPS proxy configuration.",
+      "properties": {
+        "httpProxy": {
+          "type": "string",
+          "format": "uri",
+          "description": "HTTP proxy URL."
+        },
+        "httpsProxy": {
+          "type": "string",
+          "format": "uri",
+          "description": "HTTPS proxy URL."
+        },
+        "noProxy": {
+          "type": "string",
+          "description": "Comma-separated list of hosts to bypass the proxy."
+        }
+      }
+    },
+    "authentication": {
+      "type": "object",
+      "description": "HTTP authentication credentials.",
+      "properties": {
+        "username": {
+          "type": "string",
+          "description": "HTTP authentication username."
+        },
+        "password": {
+          "type": "string",
+          "description": "HTTP authentication password."
+        },
+        "authScheme": {
+          "type": "string",
+          "enum": ["basic", "digest"],
+          "description": "HTTP authentication scheme."
+        }
+      }
+    },
+    "cookies": {
+      "type": "object",
+      "description": "HTTP cookie settings.",
+      "properties": {
+        "loadCookies": {
+          "type": "string",
+          "description": "Path to a file containing cookies in Netscape format to load before download."
+        },
+        "saveCookies": {
+          "type": "string",
+          "description": "Path to a file to save cookies to after download."
+        },
+        "keepSessionCookies": {
+          "type": "boolean",
+          "default": false,
+          "description": "Keep session (non-persistent) cookies when saving to file."
+        }
+      }
+    },
+    "retries": {
+      "type": "integer",
+      "minimum": 0,
+      "default": 20,
+      "description": "Number of retries on transient download failures. 0 means infinite."
+    },
+    "waitSeconds": {
+      "type": "number",
+      "minimum": 0,
+      "default": 0,
+      "description": "Seconds to wait between retrieval requests."
+    },
+    "timeout": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Timeout in seconds for DNS, connect, and read operations."
+    },
+    "userAgent": {
+      "type": "string",
+      "description": "Custom User-Agent header string to send with HTTP requests."
+    },
+    "acceptList": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "List of file extensions or MIME types to accept during recursive download."
+    },
+    "rejectList": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "List of file extensions or MIME types to reject during recursive download."
+    },
+    "domains": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Comma-separated list of allowed domains for recursive download."
+    },
+    "excludeDirs": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "List of directories to exclude from recursive download."
+    },
+    "background": {
+      "type": "boolean",
+      "default": false,
+      "description": "Run Wget in background and write output to wget-log."
+    },
+    "quiet": {
+      "type": "boolean",
+      "default": false,
+      "description": "Suppress all output."
+    },
+    "verbose": {
+      "type": "boolean",
+      "default": false,
+      "description": "Enable verbose output with full server response headers."
+    },
+    "inputFile": {
+      "type": "string",
+      "description": "Path to a file containing URLs to download, one per line."
+    }
+  },
+  "required": ["url"]
+}
