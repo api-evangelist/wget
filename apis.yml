@@ -40,7 +40,7 @@ apis:
     properties:
       - type: Documentation
         url: https://www.gnu.org/software/wget/manual/
-      - type: Getting Started
+      - type: GettingStarted
         url: https://www.gnu.org/software/wget/manual/wget.html
       - type: Download
         url: https://ftp.gnu.org/gnu/wget/
@@ -108,7 +108,7 @@ common:
     url: https://www.gnu.org/software/wget/manual/
   - type: Source Code
     url: https://git.savannah.gnu.org/cgit/wget.git
-  - type: GitHub Organization
+  - type: GitHubOrganization
     url: https://gitlab.com/gnuwget
   - type: Mailing List
     url: https://lists.gnu.org/mailman/listinfo/bug-wget
