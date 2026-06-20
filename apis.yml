@@ -7,7 +7,7 @@ description: >-
   be run from scripts and cron jobs. Wget2 is the next-generation successor, written
   from scratch with multi-threading, HTTP/2, and a plugin API via libwget.
 type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - CLI
   - Clients
