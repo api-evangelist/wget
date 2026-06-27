@@ -85,7 +85,7 @@ apis:
         url: https://github.com/gnuwget/wget2
       - type: Plugin API
         url: https://gnuwget.gitlab.io/wget2/reference/group__libwget-plugin.html
-      - type: Releases
+      - type: ReleaseNotes
         url: https://gitlab.com/gnuwget/wget2/-/releases
       - type: Wiki
         url: https://gitlab.com/gnuwget/wget2/-/wikis/home
