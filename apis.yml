@@ -102,6 +102,8 @@ apis:
         email: bug-wget@gnu.org
 
 common:
+  - type: DomainSecurity
+    url: security/wget-domain-security.yml
   - type: Website
     url: https://www.gnu.org/software/wget/
   - type: Documentation
