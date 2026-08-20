@@ -25,6 +25,13 @@ tags:
   - Clients
   - HTTP Client
   - File Download
+  - Open-Source
+  - GNU
+tags_raw:
+  - CLI
+  - Clients
+  - HTTP Client
+  - File Download
   - Open Source
   - GNU
 url: >-
@@ -43,6 +50,13 @@ apis:
     humanURL: https://www.gnu.org/software/wget/
     baseURL: https://ftp.gnu.org/gnu/wget/
     tags:
+      - CLI
+      - File Download
+      - HTTP Client
+      - FTP Client
+      - GNU
+      - Open-Source
+    tags_raw:
       - CLI
       - File Download
       - HTTP Client
@@ -80,6 +94,15 @@ apis:
     humanURL: https://gitlab.com/gnuwget/wget2
     baseURL: https://gnuwget.gitlab.io/wget2/
     tags:
+      - CLI
+      - File Download
+      - HTTP Client
+      - HTTP/2
+      - Multithreaded
+      - Plugin API
+      - GNU
+      - Open-Source
+    tags_raw:
       - CLI
       - File Download
       - HTTP Client
