@@ -151,6 +151,12 @@ apis:
         email: bug-wget@gnu.org
 
 common:
+  - type: Plans
+    url: plans/wget-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/wget-rate-limits.yml
+  - type: FinOps
+    url: finops/wget-finops.yml
   - type: DomainSecurity
     url: security/wget-domain-security.yml
   - type: Website
