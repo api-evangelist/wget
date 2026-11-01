@@ -66,62 +66,134 @@
 
 GNU Wget is a free, open-source command-line utility for non-interactive downloading of files from the web using HTTP, HTTPS, FTP, and FTPS protocols. It supports recursive downloading, resuming aborted downloads, mirroring websites, proxy support, and can be run from scripts and cron jobs. Wget2 is the next-generation successor, written from scratch with multi-threading, HTTP/2, and a plugin API via libwget.
 
-**Website:** https://www.gnu.org/software/wget/
+**Areas:** CLI · Clients · HTTP Client · File Download · Open Source · GNU
 
-## APIs
+## Wget on APIs.io
 
-### Wget
+Everything profiled for Wget is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/wget/](https://apis.io/providers/wget/)** — or go straight to one of the APIs or properties below.
 
-GNU Wget is a free command-line utility for non-interactive downloading of files from the web using HTTP, HTTPS, FTP, and FTPS. It supports recursive downloading, resume of aborted downloads, website mirroring, HTTP proxies, cookies, and persistent connections.
+### APIs (2)
 
-- **Documentation:** https://www.gnu.org/software/wget/manual/
-- **Getting Started:** https://www.gnu.org/software/wget/manual/wget.html
-- **Download:** https://ftp.gnu.org/gnu/wget/
-- **Source Code:** https://git.savannah.gnu.org/cgit/wget.git
-- **Bug Tracker:** https://savannah.gnu.org/bugs/?group=wget
+- [Wget](https://apis.io/apis/wget/wget/) — GNU Wget is a free command-line utility for non-interactive downloading of files from the web using HTTP, HTTPS, FTP, and FTPS. It supports recursive…
+- [Wget2](https://apis.io/apis/wget/wget2/) — GNU Wget2 is the next-generation successor to GNU Wget, built from scratch around libwget. It is multi-threaded, supports HTTP/2, HTTP compression, parallel…
 
-### Wget2
+### Published properties
 
-GNU Wget2 is the next-generation successor to GNU Wget, built from scratch around libwget. It is multi-threaded, supports HTTP/2, HTTP compression, parallel connections, If-Modified-Since headers, plugin APIs, RSS/Atom feed scanning, Sitemap XML support, and Metalink.
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-- **Documentation:** https://gnuwget.gitlab.io/wget2/reference/
-- **Source Code:** https://gitlab.com/gnuwget/wget2
-- **Plugin API:** https://gnuwget.gitlab.io/wget2/reference/group__libwget-plugin.html
-- **Releases:** https://gitlab.com/gnuwget/wget2/-/releases
+#### JSON Schema (2)
 
-## JSON Schemas
+The data models the API reads and writes.
 
-| Schema | Description |
+- [Wget Download Request](https://apis.io/schemas/wget/wget-download-request/)
+- [Wget2 Plugin](https://apis.io/schemas/wget/wget2-plugin/)
+
+#### JSON Structure (2)
+
+Data models expressed in JSON Structure.
+
+- [Wget Download Request Structure](https://apis.io/json-structure/wget/wget-download-request-structure/)
+- [Wget2 Plugin Structure](https://apis.io/json-structure/wget/wget2-plugin-structure/)
+
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Wget Context](https://apis.io/jsonld/wget/wget-context/)
+
+#### Vocabulary (1)
+
+The provider's domain terms, defined.
+
+- [Wget Vocabulary](https://apis.io/vocabularies/wget/wget-vocabulary/)
+
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [Wget — jsonschema rules](https://apis.io/rules/wget/wget-jsonschema-spectral-rules/)
+
+#### Security (1)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Wget Domain Security](https://apis.io/security/wget/wget-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Wget Plans Pricing](https://apis.io/plans/wget/wget-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Wget Rate Limits](https://apis.io/rate-limits/wget/wget-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Wget Finops](https://apis.io/finops/wget/wget-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.gnu.org/software/wget/)
+- [Documentation](https://www.gnu.org/software/wget/manual/)
+- [GitHub](https://gitlab.com/gnuwget)
+
+## API Evangelist rating
+
+**Kin Score 21.5** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
 |---|---|
-| [Wget Download Request](json-schema/wget-download-request-schema.json) | Schema for GNU Wget download request configuration |
-| [Wget2 Plugin](json-schema/wget2-plugin-schema.json) | Schema for Wget2 plugin API structure via libwget |
+| Discoverability | 66.1 |
+| Contract quality | 22.7 |
+| Contract governance | 23.5 |
+| Operational transparency | 18.4 |
+| Developer ergonomics | 15.5 |
+| Access clarity | 7.9 |
 
-## JSON Structures
+**Agent readiness 0.6** — human-only
 
-| Structure | Description |
+| Agent-readiness dimension | Result |
 |---|---|
-| [Wget Download Request](json-structure/wget-download-request-structure.json) | Structure of a Wget download request |
-| [Wget2 Plugin](json-structure/wget2-plugin-structure.json) | Structure of a Wget2 plugin definition |
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
 
-## JSON-LD Context
+**Regulatory alignment 10.8** — Horizontal (data, software, accessibility, platform)
 
-- [wget-context.jsonld](json-ld/wget-context.jsonld) — Linked data context mapping Wget vocabulary to schema.org and project-specific terms
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/wget/](https://apis.io/providers/wget/).
 
-## Vocabulary
+## How this profile is made
 
-- [wget-vocabulary.yml](vocabulary/wget-vocabulary.yml) — Domain vocabulary covering download operations, protocol support, plugin API concepts, and configuration
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
 
-## Common Resources
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Wget: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
 
-| Type | URL |
-|---|---|
-| Website | https://www.gnu.org/software/wget/ |
-| Documentation | https://www.gnu.org/software/wget/manual/ |
-| Source Code | https://git.savannah.gnu.org/cgit/wget.git |
-| GitLab Organization | https://gitlab.com/gnuwget |
-| Mailing List | https://lists.gnu.org/mailman/listinfo/bug-wget |
-| Bug Tracker | https://savannah.gnu.org/bugs/?group=wget |
-| Download | https://ftp.gnu.org/gnu/wget/ |
-| License | https://www.gnu.org/licenses/gpl-3.0.html |
+## Open an issue
 
-**Maintainer:** Kin Lane (kin@apievangelist.com)
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/wget/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
